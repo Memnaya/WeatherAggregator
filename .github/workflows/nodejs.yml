@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Make git push
       - uses: actions/checkout@v3
+      - name: Make git push
       - run: make install
       - run: make lint
