@@ -1,7 +1,7 @@
 name: Node CI
-on: [push]
+on: [push, pull_request]
 jobs:
-  pushCheck:
+  push_and_pullRequest_Check:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
