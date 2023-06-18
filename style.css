@@ -1,61 +1,75 @@
 /* inter-300 - cyrillic_latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
-    src: url('./fonts/inter-v12-cyrillic_latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('./fonts/inter-v12-cyrillic_latin-300.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* inter-regular - cyrillic_latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/inter-v12-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('./fonts/inter-v12-cyrillic_latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* inter-500 - cyrillic_latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    src: url('./fonts/inter-v12-cyrillic_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('./fonts/inter-v12-cyrillic_latin-500.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* inter-700 - cyrillic_latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    src: url('./fonts/inter-v12-cyrillic_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('./fonts/inter-v12-cyrillic_latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* inter-900 - cyrillic_latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 900;
-    src: url('./fonts/inter-v12-cyrillic_latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('./fonts/inter-v12-cyrillic_latin-900.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* Styling */
 
-/* * {
+* {
     color: #FFF;
-} */
+}
 
 .background {
     background-image: url('/img/main_bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-} 
-
-.wrapper {
-    max-width: 1280px;
-    margin: 0 auto;
 }
+
+/* .wrapper {
+    max-width: 1280px;
+    margin: 0 auto; 
+}  */
 
 .day {
     display: flex;
@@ -109,19 +123,19 @@
 }
 
 .logo>p {
-width: 128px;
-height: 29px;
-left: 83px;
-top: 30.8px;
+    width: 128px;
+    height: 29px;
+    left: 83px;
+    top: 30.8px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 29px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
 }
 
-p>span {
+.logo>p>span {
     color: #F0D12D;
     font-style: italic;
 }
@@ -162,7 +176,7 @@ p>span {
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
-    line-height: 48px; 
+    line-height: 48px;
 }
 
 .search>p {
@@ -173,154 +187,178 @@ p>span {
     height: 48px;
     left: 80px;
     top: 490px;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
 }
 
 
 .right_block {
-width: 652px;
-height: 864px;
-left: calc(50% - 652px/2);
-top: calc(50% - 864px/2);
-overflow-y: scroll;
-padding: 30px 82px 25px 30px;
-}
-
-.bg_right {
     position: relative;
-    width: 50%;
-    height: 1600px;
-    left: 850px;
-    top: 0px;
+    left: 50%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 652px;
+    height: 1100px;
+
     font-family: 'Inter';
     font-style: normal;
     color: rgba(255, 255, 255, 0.47);
-    
+
     background: rgba(0, 0, 0, 0.32);
+    
+    overflow-y: scroll;
+    padding: 30px 82px 25px 30px;
 }
 
-.bg_blocks {
+.right_block div {
+    display: flex;
+    flex-direction: column;
     background: rgba(0, 0, 0, 0.3);
-backdrop-filter: blur(5px);
-border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
 }
+
+.block_header {
+    display: flex;
+    height: 20px;
+}
+
+.first_block {
+    padding: 15px;
+    width: 545px;
+    height: 184px;
+}
+
+.block_header p {
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.block_header img {margin-right: 10px}
 
 .seven_days {
-    padding: 15px;
     display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 15px;
-gap: 10px;
-
-width: 545px;
-height: 184px;
-left: 0px;
-top: 0px;
+    margin-top: 10px;
+    height: 24px;
+    width: 100%;
 }
-
-.bg_blocks>p {    /* подвинуть текст */
-    margin-top: 0;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-
-
-
-}
-
-.bg_blocks>p>img {
+.seven_days p {
+    margin: 0;
+    display: block;
     margin-right: 10px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
 }
 
-.indexUV {
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 15px;
-gap: 13px;
+.seven_days p:nth-child(1) {font-weight: 400}
+.seven_days p:last-child {margin-right: 0}
 
-width: 175px;
-height: 165px;
-left: 0px;
-top: 195px;
+.seven_days img {
+    margin-right: 10px;
+    margin-top: 3px;
+    height: 20px;
+    width: 20px;
 }
 
-.sunset {
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 18px 10px;
-gap: 26px;
-
-width: 175px;
-height: 165px;
-left: 185px;
-top: 195px;
+.forecast_gradient {
+    background-color: rgba(255, 255, 255, 0.26);
+    height: 5px;
+    width: 100%;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
-.rainfall {
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 20px 10px 19px;
-gap: 13px;
+.little_blocks {
+    margin-right: 10px;
+    padding: 15px;
 
-width: 175px;
-height: 165px;
-left: 370px;
-top: 195px;
+    width: 175px;
+    height: 165px;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.feels_like {
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 14px 10px 15px;
-gap: 14px;
+.little_blocks:nth-child(4n) {margin-right: 0;}
 
-width: 175px;
-height: 165px;
-left: 0px;
-top: 370px;
+.prop_value {
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
 }
 
-.humidity {
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 27px 10px;
-gap: 31px;
-
-width: 175px;
-height: 165px;
-left: 185px;
-top: 370px;
+.little_blocks>h4 {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    margin: 0;
+    padding: 10px;
 }
 
-.pressure {
-    display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 2px 10px 27px;
-gap: 23px;
+.value_UV {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0;
+}
+.sunset > .block_header {margin-bottom: 15px;}
 
-width: 175px;
-height: 165px;
-left: 370px;
-top: 370px;
+.uv_gradient {
+    background: linear-gradient(90deg, #91E4BC, #9A77E5, #F36060, #FCE411);
+    height: 5px;
+    width: 100%;
+    margin: 10px;
 }
 
-.precipitation_map {
+.sunrise_info, .sunrise_time {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+}
+
+.rainfall>p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+}
+.rainfall> p:nth-child(4n), span.rainfall_value {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 100%;
+    margin: 0;
+}
+
+.feels_like > p:last-child {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+}
+
+.humidity > p:last-child {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+}
+
+.pressure > p:last-child {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;    
+    margin: 0;
+}
+
+.map_block {
     width: 545px;
     height: 339px;
-    left: 0px;
-    top: 545px;
 }
