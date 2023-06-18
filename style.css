@@ -106,11 +106,9 @@
     height: 61px;
     left: 67px;
     top: 15.8px;
-
 }
 
 .logo>p {
-position: absolute;
 width: 128px;
 height: 29px;
 left: 83px;
@@ -125,6 +123,7 @@ line-height: 29px;
 
 p>span {
     color: #F0D12D;
+    font-style: italic;
 }
 
 .search>h2 {
@@ -181,11 +180,10 @@ line-height: 29px;
 
 
 .right_block {
-    position: absolute;
 width: 652px;
-height: 1670px;
-left: 628px;
-top: -347px;
+height: 864px;
+left: calc(50% - 652px/2);
+top: calc(50% - 864px/2);
 overflow-y: scroll;
 padding: 30px 82px 25px 30px;
 }
@@ -196,14 +194,16 @@ padding: 30px 82px 25px 30px;
     height: 1600px;
     left: 850px;
     top: 0px;
+    font-family: 'Inter';
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.47);
     
     background: rgba(0, 0, 0, 0.32);
 }
 
-.bg_blocks:nth-child(n) {
+.bg_blocks {
     background: rgba(0, 0, 0, 0.3);
 backdrop-filter: blur(5px);
-
 border-radius: 15px;
 }
 
@@ -221,18 +221,106 @@ left: 0px;
 top: 0px;
 }
 
-.seven_days>p {
-
+.bg_blocks>p {    /* подвинуть текст */
     margin-top: 0;
-font-family: 'Inter';
-font-style: normal;
 font-weight: 400;
 font-size: 16px;
 line-height: 19px;
 
-color: rgba(255, 255, 255, 0.47);
+
+
 }
 
-.seven_days>p>img {
+.bg_blocks>p>img {
     margin-right: 10px;
+}
+
+.indexUV {
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 15px;
+gap: 13px;
+
+width: 175px;
+height: 165px;
+left: 0px;
+top: 195px;
+}
+
+.sunset {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 18px 10px;
+gap: 26px;
+
+width: 175px;
+height: 165px;
+left: 185px;
+top: 195px;
+}
+
+.rainfall {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 20px 10px 19px;
+gap: 13px;
+
+width: 175px;
+height: 165px;
+left: 370px;
+top: 195px;
+}
+
+.feels_like {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 14px 10px 15px;
+gap: 14px;
+
+width: 175px;
+height: 165px;
+left: 0px;
+top: 370px;
+}
+
+.humidity {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 27px 10px;
+gap: 31px;
+
+width: 175px;
+height: 165px;
+left: 185px;
+top: 370px;
+}
+
+.pressure {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 2px 10px 27px;
+gap: 23px;
+
+width: 175px;
+height: 165px;
+left: 370px;
+top: 370px;
+}
+
+.precipitation_map {
+    width: 545px;
+    height: 339px;
+    left: 0px;
+    top: 545px;
 }

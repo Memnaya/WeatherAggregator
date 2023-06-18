@@ -7,8 +7,7 @@ async function checkWeather() {
   const data = await response.json();
   console.log(data);
 
-    document.querySelector('.some_class').innerHTML = data.current.feelslike_c + '°C';
+  document.querySelector('.current_temp').innerHTML = `${data.current.feelslike_c}°C`;
 }
 
 checkWeather();
-
