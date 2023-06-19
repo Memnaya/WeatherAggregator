@@ -20,7 +20,7 @@
             <div class="transparent_city js_transparent_city">Санкт-Петербург</div>
             <div class="search_form js_search_form" style="width: 208px;">
             <div class="search_lebel">
-                <input type="search" placeholder="Санкт-Петербург" class="input js_input" autocomplete="off">
+                <input type="search" placeholder="Санкт-Петербург" class="input js_input" onkeypress="handle(event)" autocomplete="off">
             </div></div>
             <p><img src="" alt="">Облачно</p>
         </div>
@@ -105,7 +105,8 @@
             <td>temp</td>
         </tr>
     </table>
-        <div class="right_block">
+    </div>
+            <div class="right_block">
             <div class="first_block">
                 <span class="block_header"><img src="/img/calendar.svg" alt="Календарь"><p>Прогноз на 10 дней</p></span>
                 <span class="seven_days">
@@ -152,6 +153,8 @@
                 <span class="block_header"><p><img src="/img/umbrella.svg" alt="Зонт">Карта осадков</p></span>
                 <img src="https://sun9-79.userapi.com/vgwc2sllGz0V4tNVjzsX97i3b-1D78Zc1EafNw/1iqVwtnanDo.jpg" alt="Ожидается Батхёрт">
             </div>
+        </div>
+
         </div>
     </main>
 </body>
