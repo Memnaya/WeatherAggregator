@@ -200,8 +200,10 @@ main {
     top: 0;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, 15px);
-    grid-template-rows: repeat(auto-fill, 15px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 10px;
+    column-gap: 10px;
 
     width: 540px;
     height: 720px;
@@ -215,4 +217,142 @@ main {
     overflow-y: hidden;
     padding: 30px 82px 25px 30px;
     margin: 0;
+}
+
+.right_block section {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+}
+
+.forecast7days {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.data7days {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: white;
+}
+
+.data7days :first-child{margin: 0}
+
+.forecast_gradient {
+    background-color: rgba(255, 255, 255, 0.26);
+    height: 5px;
+    width: 100%;
+}
+
+.data7days * {
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.right_block * header {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+section header *{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+section header img {margin-right: 5px;}
+
+.indexUV {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.uv_gradient {
+    background: linear-gradient(90deg, #91E4BC, #9A77E5, #F36060, #FCE411);
+    height: 5px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.right_block :not(.forecast7days) div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #FFFFFF;
+}
+
+.right_block :not(.forecast7days) div * {
+    margin: 0;
+    margin-top: 5px;
+    
+}
+
+.right_block :not(.forecast7days) div p{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    
+}
+
+
+.sunset {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.rainfall {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.feels_like {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.humidity {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+
+.pressure {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.map_block {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
 }
