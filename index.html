@@ -23,7 +23,7 @@
                             <input type="search" placeholder="Санкт-Петербург" class="input js_input" autocomplete="off">
                         </div>
                     </div>
-                    <p><img src="" alt="">Облачно</p>
+                    <p><img src="/img/cloud.svg" alt="">Облачно</p>
                 </div>
 
                 <div class="weather24hours">
@@ -32,7 +32,87 @@
             </div>
 
             <div class="right_block">
-                <section class="forecast10days"></section>
+                <section class="forecast7days">
+                    <header>
+                        <img src="/img/calendar.svg" alt="Календарь">
+                        <p>Погода на 10 дней</p>
+                    </header>
+                    <div class="data7days">
+                        <p>Сегодня</p>
+                        <img src="/img/cloud.svg" alt="Картинка">
+                        <p class="min_temp">10</p>
+                        <span class="forecast_gradient"></span>
+                        <p class="max_temp">20</p>
+                    </div>
+                </section>
+                 <section class="indexUV">
+                    <header>
+                        <img src="/img/sun.svg" alt="Солнце">
+                        <p>Уф-индекс</p>
+                    </header>
+                    <div>
+                        <h4 class="indexUV">5</h4>
+                        <p class="value_UV">Среднее</p>
+                        <span class="uv_gradient"></span>
+                    </div>
+                </section>
+                 <section class="sunset">
+                    <header>
+                        <img src="/img/sunset.svg" alt="Закат">
+                        <p>Закат/Восход</p>
+                    </header>
+                    <div>
+                        <h4 class="sunset_time">20:39</h4>
+                        <p class="sunrise_info">Восход<span class="sunrise_time"> 03:27</span></p> 
+                    </div>
+                 </section>
+                 <section class="rainfall">
+                    <header>
+                        <img src="/img/umbrella.svg" alt="Зонт">
+                        <p>Осадки</p>
+                    </header>
+                    <div>
+                        <h4 class="rainfall_value">мм</h4>
+                        <p>за последние 24ч</p>
+                        <p><span class="rainfall_value"></span>мм ожидается в течении суток</p>
+                    </div>
+                 </section>
+                 <section class="feels_like">
+                    <header>
+                        <img src="/img/thermometer.svg" alt="Термометр">
+                        <p>Ощущается как</p>
+                    </header>
+                    <div>
+                        <h4 class="feels_like_value">20</h4>
+                        <p>По ощущениям прохладнее из-за ветра</p>
+                    </div>
+                 </section>
+                 <section class="humidity">
+                    <header>
+                        <img src="/img/droplet.svg" alt="Влажность">
+                        <p>Влажность</p>
+                    </header>
+                    <div>
+                        <h4 class="humidity_value">55%</h4>
+                        <p>Точка росы сейчас <span class="dewPoint">1</span></p>
+                    </div>
+                 </section>
+                 <section class="pressure">
+                    <header>
+                        <img src="/img/pressure_indicator.svg" alt="Давление">
+                        <p>Давление</p>
+                    </header>
+                    <div>
+                        <h4 class="pressure_value">764</h4>
+                        <p>мм рт. ст.</p>
+                    </div>
+                 </section>
+                 <section class="map_block">
+                    <header>
+                        <img src="/img/umbrella.svg" alt="Зонт">
+                        <p>Карта осадков</p>
+                    </header>
+                 </section>
             </div>
         
         </div>
