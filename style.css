@@ -58,89 +58,49 @@
     
 }
 
-* {
+/* * {
     color: #FFF;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
 }
-
-
 
 .background {
     background-image: url('/img/main_bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    
 }
 
 .wrapper {
     max-width: 1280px;
+    height: 720px;
     margin: 0 auto;
-    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
     
 }  
 
 main {
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
-    width: 1280px;
+    max-width: 1280px;
     height: 720px;
     margin: 0;
     padding: 0;
 }
 
 .left_block {
-    position: absolute;
-    display: flex;
-    left: 0;
-    top: 0;
     width: 628px;
-    overflow-x: hidden;
-}
-
-.day {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    position: absolute;
-    width: 505px;
-    height: 138px;
-    left: 84px;
-    top: 542px;
-    overflow-x: scroll;
-    text-align: center;
-}
-
-.first_line {
-    width: 10px;
-    height: 24px;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
 }
 
-.second_line {
-    width: 23px;
-    height: 23px;
-    left: 2px;
-    top: 2px;
-}
 
-.third_line {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 24px;
-    width: 23px;
-    height: 23px;
-    left: 2px;
-    top: 2px;
-}
 
 .logo {
-    position: absolute;
+    position: relative;
     width: 162px;
     height: 61px;
     left: 67px;
@@ -153,8 +113,7 @@ main {
     left: 83px;
     top: 30.8px;
 
-    font-family: 'Inter';
-    font-style: normal;
+    
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
@@ -179,16 +138,13 @@ main {
 }
 
 
-
-.transparent_city {
-    display: none;
-}
+.transparent_city {display: none}
 
 .search .input {
     position: absolute;
     height: 48px;
     left: 80px;
-    top: 490px;
+    top: 303px;
     background-image: url('/img/loupe.svg');
     background-position: 10px;
     background-repeat: no-repeat;
@@ -202,6 +158,7 @@ main {
     font-weight: 700;
     font-size: 40px;
     line-height: 48px;
+    width: 425px;
 }
 
 .search>p {
@@ -243,9 +200,11 @@ main {
     top: 0;
 
     display: grid;
+    grid-template-columns: repeat(auto-fill, 15px);
+    grid-template-rows: repeat(auto-fill, 15px);
 
     width: 540px;
-    height: 1615px;
+    height: 720px;
 
     font-family: 'Inter';
     font-style: normal;
