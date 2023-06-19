@@ -7,154 +7,34 @@
     <link rel="stylesheet" href="style.css">
     <title>Weather</title>
 </head>
-<body class="background">
-    <main>
+<body>
+    <main class="background">
         <div class="wrapper">
             <div class="left_block">
-    <div class="logo">
-        <p>weather.<span>ru</span></p>
-    </div>
+                <div class="logo">
+                    <p>weather.<span>ru</span></p>
+                </div>
 
-        <div class="search js_search">
-            <h2 class="current_temp">temp</h2>
-            <div class="transparent_city js_transparent_city">Санкт-Петербург</div>
-            <div class="search_form js_search_form" style="width: 208px;">
-            <div class="search_lebel">
-                <input type="search" placeholder="Санкт-Петербург" class="input js_input" onkeypress="handle(event)" autocomplete="off">
-            </div></div>
-            <p><img src="" alt="">Облачно</p>
-        </div>
+                <div class="search js_search">
+                    <h2 class="current_temp">temp</h2>
+                    <div class="transparent_city js_transparent_city">Санкт-Петербург</div>
+                    <div class="search_form js_search_form" style="width: 208px;">
+                        <div class="search_lebel">
+                            <input type="search" placeholder="Санкт-Петербург" class="input js_input" autocomplete="off">
+                        </div>
+                    </div>
+                    <p><img src="" alt="">Облачно</p>
+                </div>
 
-    <table class="day">
-        <tr class="fist_line">
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-          <td>13</td>
-          <td>14</td>
-          <td>15</td>
-          <td>16</td>
-          <td>17</td>
-          <td>18</td>
-          <td>19</td>
-          <td>20</td>
-          <td>21</td>
-          <td>22</td>
-          <td>23</td>
-          <td>24</td>
-        </tr>
-        <tr class="second_line">
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-            <td><img src="" alt="">icon</img></td>
-        </tr>
-        <tr class="third_line">
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-            <td>temp</td>
-        </tr>
-    </table>
-    </div>
+                <div class="weather24hours">
+                    
+                </div>
+            </div>
+
             <div class="right_block">
-            <div class="first_block">
-                <span class="block_header"><img src="/img/calendar.svg" alt="Календарь"><p>Прогноз на 10 дней</p></span>
-                <span class="seven_days">
-                    <p>Сегодня</p>
-                    <img src="/img/cloud.svg" alt="Картинка">
-                    <p class="min_temp">10</p>
-                    <span class="forecast_gradient"></span>
-                    <p class="max_temp">20</p>
-                </span>
+                <section class="forecast10days"></section>
             </div>
-            <div class="little_blocks">
-                <span class="block_header"><p><img src="/img/sun.svg" alt="Солнце">Уф-индекс</p></span>
-                <h4 class="indexUV prop_value">5</h4>
-                <p class="value_UV">Среднее</p>
-                <span class="uv_gradient"></span>
-            </div>
-            <div class="sunset little_blocks">
-                <span class="block_header"><p><img src="/img/sunset.svg" alt="Закат">Закат/Восход</p></span>
-                <h4 class="sunset_time">20:39</h4>
-                <p class="sunrise_info">Восход<span class="sunrise_time"> 03:27</span></p> 
-            </div>
-            <div class="rainfall little_blocks">
-                <span class="block_header"><p><img src="/img/umbrella.svg" alt="Осадки">Осадки</p></span>
-                <h4 class="rainfall_value">мм</h4>
-                <p>за последние 24ч</p>
-                <p><span class="rainfall_value"></span>мм ожидается в течении суток</p>
-            </div>
-            <div class="feels_like little_blocks">
-                <span class="block_header"><p><img src="/img/thermometer.svg" alt="Термометр">Ощущается как</p></span>
-                <h4 class="feels_like_value">20</h4>
-                <p>По ощущениям прохладнее из-за ветра</p>
-            </div>
-            <div class="humidity little_blocks">
-                <span class="block_header"><p><img src="/img/droplet.svg" alt="Капля">Влажность</p></span>
-                <h4 class="humidity_value">55%</h4>
-                <p>Точка росы сейчас <span class="dewPoint">1</span></p>
-            </div>
-            <div class="pressure little_blocks">
-                <span class="block_header"><p><img src="/img/pressure_indicator.svg" alt="Давление">Давление</p></span>
-                <h4 class="pressure_value">764</h4>
-                <p>мм рт. ст.</p>
-            </div>
-            <div class="precipitation_map map_block">
-                <span class="block_header"><p><img src="/img/umbrella.svg" alt="Зонт">Карта осадков</p></span>
-                <img src="https://sun9-79.userapi.com/vgwc2sllGz0V4tNVjzsX97i3b-1D78Zc1EafNw/1iqVwtnanDo.jpg" alt="Ожидается Батхёрт">
-            </div>
-        </div>
-
+        
         </div>
     </main>
 </body>

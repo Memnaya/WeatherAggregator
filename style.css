@@ -54,9 +54,17 @@
 }
 
 /* Styling */
+:root {
+    
+}
 
-* {
+/* * {
     color: #FFF;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 .background {
@@ -64,58 +72,35 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    
 }
 
-/* .wrapper {
+.wrapper {
     max-width: 1280px;
-    margin: 0 auto; 
-}  */
+    height: 720px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    
+}  
 
-.day {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    position: absolute;
-    width: 505px;
-    height: 138px;
-    left: 84px;
-    top: 542px;
-    overflow-x: scroll;
-    text-align: center;
+main {
+    max-width: 1280px;
+    height: 720px;
+    margin: 0;
+    padding: 0;
 }
 
-.first_line {
-    width: 10px;
-    height: 24px;
+.left_block {
+    width: 628px;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
 }
 
-.second_line {
-    width: 23px;
-    height: 23px;
-    left: 2px;
-    top: 2px;
-}
 
-.third_line {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 24px;
-    width: 23px;
-    height: 23px;
-    left: 2px;
-    top: 2px;
-}
 
 .logo {
-    position: absolute;
+    position: relative;
     width: 162px;
     height: 61px;
     left: 67px;
@@ -128,8 +113,7 @@
     left: 83px;
     top: 30.8px;
 
-    font-family: 'Inter';
-    font-style: normal;
+    
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
@@ -154,16 +138,13 @@
 }
 
 
-
-.transparent_city {
-    display: none;
-}
+.transparent_city {display: none}
 
 .search .input {
     position: absolute;
     height: 48px;
     left: 80px;
-    top: 490px;
+    top: 303px;
     background-image: url('/img/loupe.svg');
     background-position: 10px;
     background-repeat: no-repeat;
@@ -177,7 +158,7 @@
     font-weight: 700;
     font-size: 40px;
     line-height: 48px;
-    color: black;
+    width: 425px;
 }
 
 .search>p {
@@ -194,15 +175,36 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .right_block {
-    position: relative;
-    left: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
 
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 15px);
+    grid-template-rows: repeat(auto-fill, 15px);
 
-    width: 652px;
-    height: 1100px;
+    width: 540px;
+    height: 720px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -210,156 +212,7 @@
 
     background: rgba(0, 0, 0, 0.32);
     
-    overflow-y: scroll;
+    overflow-y: hidden;
     padding: 30px 82px 25px 30px;
-}
-
-.right_block div {
-    display: flex;
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
-}
-
-.block_header {
-    display: flex;
-    height: 20px;
-}
-
-.first_block {
-    padding: 15px;
-    width: 545px;
-    height: 184px;
-}
-
-.block_header p {
-    margin-top: 0;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-}
-
-.block_header img {margin-right: 10px}
-
-.seven_days {
-    display: flex;
-    margin-top: 10px;
-    height: 24px;
-    width: 100%;
-}
-.seven_days p {
     margin: 0;
-    display: block;
-    margin-right: 10px;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 24px;
-}
-
-.seven_days p:nth-child(1) {font-weight: 400}
-.seven_days p:last-child {margin-right: 0}
-
-.seven_days img {
-    margin-right: 10px;
-    margin-top: 3px;
-    height: 20px;
-    width: 20px;
-}
-
-.forecast_gradient {
-    background-color: rgba(255, 255, 255, 0.26);
-    height: 5px;
-    width: 100%;
-    margin-right: 10px;
-    margin-top: 10px;
-}
-
-.little_blocks {
-    margin-right: 10px;
-    padding: 15px;
-
-    width: 175px;
-    height: 165px;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.little_blocks:nth-child(4n) {margin-right: 0;}
-
-.prop_value {
-    margin: 0;
-    padding-top: 10px;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 48px;
-}
-
-.little_blocks>h4 {
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 48px;
-    margin: 0;
-    padding: 10px;
-}
-
-.value_UV {
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    margin: 0;
-}
-.sunset > .block_header {margin-bottom: 15px;}
-
-.uv_gradient {
-    background: linear-gradient(90deg, #91E4BC, #9A77E5, #F36060, #FCE411);
-    height: 5px;
-    width: 100%;
-    margin: 10px;
-}
-
-.sunrise_info, .sunrise_time {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 17px;
-    margin: 0;
-}
-
-.rainfall>p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    margin: 0;
-}
-.rainfall> p:nth-child(4n), span.rainfall_value {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 100%;
-    margin: 0;
-}
-
-.feels_like > p:last-child {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 17px;
-    margin: 0;
-}
-
-.humidity > p:last-child {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 17px;
-    margin: 0;
-}
-
-.pressure > p:last-child {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;    
-    margin: 0;
-}
-
-.map_block {
-    width: 545px;
-    height: 339px;
 }
