@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Weather</title>
 </head>
@@ -11,18 +14,19 @@
     <main>
         <div class="wrapper">
             <div class="left_block">
-    <div class="logo">
-        <p>weather.<span>ru</span></p>
-    </div>
+              <div class="logo">
+                <p>weather.<span>ru</span></p>
+              </div>
 
-        <div class="search js_search">
+        <div class="search_js_search">
             <h2 class="current_temp">temp</h2>
+            <div class="loupe" img src="img/Vector.png" alt=""></div>
             <div class="transparent_city js_transparent_city">Санкт-Петербург</div>
             <div class="search_form js_search_form" style="width: 208px;">
             <div class="search_lebel">
-                <input type="search" placeholder="Санкт-Петербург" class="input js_input" autocomplete="off">
+              <input type="search" placeholder="Санкт-Петербург" class="input js_input" autocomplete="off">
             </div></div>
-            <p><img src="" alt="">Облачно</p>
+            <p><img src="img/cloud.svg" alt="">Облачно</p>
         </div>
 
     <table class="day">
@@ -108,28 +112,28 @@
         </div>
         <div class="right_block bg_right">
             <div class="seven_days bg_blocks">
-                <p><img src="/img/calendar.svg" alt="Календарь">Прогноз на 10 дней</p>
+                <p><img src="img/calendar.svg" alt="Календарь">Прогноз на 10 дней</p>
             </div>
             <div class="indexUV bg_blocks">
-                <p><img src="/img/sun.svg" alt="Солнце">Уф-индекс</p>
+                <p><img src="img/sun.svg" alt="Солнце">Уф-индекс</p>
             </div>
             <div class="sunset bg_blocks">
-                <p><img src="/img/sunset.svg" alt="Закат">Закат/Восход</p>
+                <p><img src="img/sunset.svg" alt="Закат">Закат/Восход</p>
             </div>
             <div class="rainfall bg_blocks">
-                <p><img src="/img/umbrella.svg" alt="Осадки">Осадки</p>
+                <p><img src="img/umbrella.svg" alt="Осадки">Осадки</p>
             </div>
             <div class="feels_like bg_blocks">
-                <p><img src="/img/thermometer.svg" alt="Термометр">Ощущается как</p>
+                <p><img src="img/thermometer.svg" alt="Термометр">Ощущается как</p>
             </div>
             <div class="humidity bg_blocks">
-                <p><img src="/img/droplet.svg" alt="Капля">Влажность</p>
+                <p><img src="img/droplet.svg" alt="Капля">Влажность</p>
             </div>
             <div class="pressure bg_blocks">
-                <p><img src="/img/pressure_indicator.svg" alt="Давление">Давление</p>
+                <p><img src="img/pressure_indicator.svg" alt="Давление">Давление</p>
             </div>
             <div class="precipitation_map bg_blocks">
-                <p><img src="/img/umbrella.svg" alt="Зонт">Карта осадков</p>
+                <p><img src="img/umbrella.svg" alt="Зонт">Карта осадков</p>
             </div>
         </div>
         </div>

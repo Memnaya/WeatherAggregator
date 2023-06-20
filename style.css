@@ -45,8 +45,20 @@
     color: #FFF;
 } */
 
+.body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.current_temp {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 96px;
+}
+
 .background {
-    background-image: url('/img/main_bg.png');
+    background-image: url('img/main_bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -74,7 +86,7 @@
 .first_line {
     width: 10px;
     height: 24px;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -113,6 +125,7 @@ width: 128px;
 height: 29px;
 left: 83px;
 top: 30.8px;
+color: #fff;
 
 font-family: 'Inter';
 font-style: normal;
@@ -139,7 +152,14 @@ p>span {
     line-height: 116px;
 }
 
-
+.loupe {
+  position: absolute;
+  left: 6.14%;
+  right: 9.38%;
+  top: 6.14%;
+  bottom: 9.38%;
+  color: #F0D12D;
+}
 
 .transparent_city {
     display: none;
@@ -150,7 +170,7 @@ p>span {
     height: 48px;
     left: 80px;
     top: 490px;
-    background-image: url('/img/loupe.svg');
+    background-image: url('img/loupe.svg');
     background-position: 10px;
     background-repeat: no-repeat;
     background-size: 19px 16px;
