@@ -68,7 +68,9 @@ body {
 }
 
 .background {
-    background-image: url('/img/main_bg.png');
+    max-width: 100%;
+    height: unset;
+    background-image: url('/img/bg_test.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -76,12 +78,9 @@ body {
 }
 
 .wrapper {
+    display: flex;
     max-width: 1280px;
-    height: 720px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
-    
 }  
 
 main {
@@ -92,27 +91,23 @@ main {
 }
 
 .left_block {
-    width: 628px;
+    flex-basis: 52%;
     font-family: 'Inter';
     font-style: normal;
+    padding: 31px 0 0 83px;
 }
 
 
 
 .logo {
     position: relative;
-    width: 162px;
-    height: 61px;
-    left: 67px;
-    top: 15.8px;
 }
 
 .logo>p {
     width: 128px;
     height: 29px;
-    left: 83px;
-    top: 30.8px;
-
+    color: #FFF;
+    margin: 0;
     
     font-weight: 700;
     font-size: 24px;
@@ -124,28 +119,54 @@ main {
     font-style: italic;
 }
 
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 98vh;
+}
+
 .search>h2 {
-    position: absolute;
-    width: 146px;
-    height: 116px;
-    left: 83px;
-    top: 303px;
-    font-family: 'Inter';
+    display: inline;
+    margin: 0 0 4px 0;
+    font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 96px;
     line-height: 116px;
+    color: #FFF;
 }
-
+/* Until 24h will be done*/
+.search > p {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    padding-top: 18px;
+    padding-bottom: 170px;
+}
 
 .transparent_city {display: none}
 
-.search .input {
-    position: absolute;
-    height: 48px;
-    left: 80px;
-    top: 303px;
+.search_label {
+    display: flex;
+}
+
+.btn {
+    padding: 16px;
+    background-color: unset;
     background-image: url('/img/loupe.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
+
+.search .input {
+
+    background-color: unset;
     background-position: 10px;
     background-repeat: no-repeat;
     background-size: 19px 16px;
@@ -159,16 +180,16 @@ main {
     font-size: 40px;
     line-height: 48px;
     width: 425px;
+    color: #FFF;
 }
 
 .search>p {
     display: inline-flex;
-    position: absolute;
+
     font-family: 'Inter';
     font-style: normal;
     height: 48px;
-    left: 80px;
-    top: 490px;
+    margin: 0;
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
@@ -195,30 +216,25 @@ main {
 
 
 .right_block {
-    position: absolute;
-    right: 0;
-    top: 0;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     row-gap: 10px;
     column-gap: 10px;
-
-    width: 540px;
-    height: 720px;
-
+    flex-basis: 48%;
     font-family: 'Inter';
     font-style: normal;
     color: rgba(255, 255, 255, 0.47);
 
     background: rgba(0, 0, 0, 0.32);
-    
-    overflow-y: hidden;
-    padding: 30px 82px 25px 30px;
+    height: 100vh;
+    padding: 30px 82px 0 30px;
     margin: 0;
 }
-
+.right_block > section {
+    display: inline-block;
+    overflow: hidden;
+}
 .right_block section {
     padding: 15px;
     background: rgba(0, 0, 0, 0.3);
@@ -237,7 +253,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    /*margin: 10px;*/
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
@@ -381,5 +397,5 @@ section > div > p{
 .humidity > div > .humidity_value { padding-top: 20px}
 .humidity > div > p {padding-top: 18px;}
 
-.pressure > div > .pressure_value { padding-top: 20px};
+.pressure > div > .pressure_value { padding-top: 20px}
 .pressure > div > p {padding-top: 18px;}
