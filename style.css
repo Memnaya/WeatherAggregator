@@ -258,11 +258,6 @@ main {
     padding: 0;
 }
 
-.right_block * header {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
 section header *{
     margin: 0;
     padding: 0;
@@ -284,15 +279,10 @@ section header img {margin-right: 5px;}
     background: linear-gradient(90deg, #91E4BC, #9A77E5, #F36060, #FCE411);
     height: 5px;
     width: 100%;
-    margin-top: 10px;
 }
 
-.right_block :not(.forecast7days) div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.right_block :not(:first-child) div {
+   
     font-weight: 400;
     font-size: 40px;
     line-height: 48px;
@@ -300,19 +290,19 @@ section header img {margin-right: 5px;}
     color: #FFFFFF;
 }
 
-.right_block :not(.forecast7days) div * {
+.right_block :not(:first-child) div * {
     margin: 0;
     margin-top: 5px;
+    text-align: center;
     
 }
 
-.right_block :not(.forecast7days) div p{
+section > div > p{
     font-weight: 300;
     font-size: 14px;
     line-height: 17px;
-    
+    text-align: center;
 }
-
 
 .sunset {
     grid-column-start: 2;
@@ -356,3 +346,40 @@ section header img {margin-right: 5px;}
     grid-row-start: 4;
     grid-row-end: 5;
 }
+
+.right_block > section > header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value_UV {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    height: 45px;
+}
+
+.data7days > p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
+.sunset .sunset_time {padding-top: 25px}
+.sunset .sunrise_info {padding-top: 18px}
+.rainfall > div > .last24hours {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+}
+
+.humidity > div > .humidity_value { padding-top: 20px}
+.humidity > div > p {padding-top: 18px;}
+
+.pressure > div > .pressure_value { padding-top: 20px};
+.pressure > div > p {padding-top: 18px;}
