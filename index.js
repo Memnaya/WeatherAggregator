@@ -1,9 +1,11 @@
 const apiKey = 'd50fea6da78846e2adb160603231206';
 const apiUrl = 'http://api.weatherapi.com/v1/current.json';
 const apiUrlAstro = 'http://api.weatherapi.com/v1/astronomy.json';
-const searchBox = document.querySelector('.js_input');
+const searchBox = document.querySelector(' .js_input');
+const searchBtn = document.querySelector(' .js_btn');
 
 async function checkWeather(city = 'Saint-Petersburg') {
+  // const responseCurrent = await fetch('http://api.weatherapi.com/v1/current.json?key=d50fea6da78846e2adb160603231206&q=London');
   const responseCurrent = await fetch(`${apiUrl}?key=${apiKey}&q=${city}`);
   const data = await responseCurrent.json();
   const responseAstro = await fetch(`${apiUrlAstro}?key=${apiKey}&q=${city}`);
@@ -11,11 +13,11 @@ async function checkWeather(city = 'Saint-Petersburg') {
   console.log(data);
   console.log(dataAstro);
 
-  document.querySelector('.current_temp').innerHTML = `${data.current.temp_c}°C`;
+  document.querySelector('.current_temp').innerHTML = `${Math.round(data.current.temp_c)}°C`;
   document.querySelector('.pressure_value').innerHTML = `${data.current.pressure_mb}`;
   document.querySelector('.feels_like_value').innerHTML = `${Math.round(data.current.feelslike_c)}°C`;
   document.querySelector('.humidity_value').innerHTML = `${data.current.humidity}%`;
-  document.querySelector('.indexUV').innerHTML = `${data.current.uv}`;
+  document.querySelector('.indexUV1').innerHTML = `${data.current.uv}`;
   switch (data.current.uv) {
     case 1 || 2:
       document.querySelector('.value_UV').innerHTML = 'Низкий';
@@ -43,3 +45,8 @@ function handle(e) {
     checkWeather(searchBox.value);
   }
 }
+// checkWeather();
+
+// searchBtn.addEventListener('click', () => {
+//   checkWeather(searchBox.value);
+// });
