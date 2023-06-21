@@ -399,6 +399,31 @@ section > div > p{
     color: #FFFFFF;
 }
 
-.humidity > div > .humidity_value { padding-top: 20px}
-.humidity > div > p {padding-top: 10px;}
+.pressure > div > .pressure_value { padding-top: 20px};
+.pressure > div > p {padding-top: 18px;}
 
+.slider {
+    width: 0; 
+    height: 0;
+}
+
+.sliderUV::-moz-range-thumb {
+    cursor: pointer;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    border: 2px solid #F0D12D;
+}
+.slider7days::-moz-range-thumb {
+    cursor: pointer;
+    appearance: none;
+    width: 0px;
+    height: 0px;
+    background-color: linear-gradient(90deg, #91E4BC, #FCE411);
+    
+}
+=======
+.pressure > div > .pressure_value { padding-top: 20px}
+.pressure > div > p {padding-top: 18px;}
