@@ -19,8 +19,9 @@
                     <h2 class="current_temp">temp</h2>
                     <div class="transparent_city js_transparent_city">Санкт-Петербург</div>
                     <div class="search_form js_search_form" style="width: 208px;">
-                        <div class="search_lebel">
-                            <input type="search" placeholder="Санкт-Петербург" class="input js_input" autocomplete="off">
+                        <div class="search_label">
+                            <button class="btn js-btn"></button>
+                            <input type="search" placeholder="Санкт-Петербург" class="input js_input" onkeypress="handle(event)" autocomplete="off">
                         </div>
                     </div>
                     <p><img src="" alt="">Облачно</p>
@@ -51,7 +52,7 @@
                         <p>Уф-индекс</p>
                     </header>
                     <div>
-                        <h4 class="indexUV">5</h4>
+                        <h4 class="indexUV1">5</h4>
                         <p class="value_UV">Среднее</p>
                         <div class="slider">
                             <input type="range" id="fader" min="0" class="sliderUV" max="11" value="0">
