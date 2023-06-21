@@ -262,8 +262,10 @@ main {
 
 .data7days :first-child{margin: 0}
 
-.forecast_gradient {
+.slider7days {
+    -webkit-appearance: none;
     background-color: rgba(255, 255, 255, 0.26);
+    border-radius: 25px;
     height: 5px;
     width: 100%;
 }
@@ -291,10 +293,13 @@ section header img {margin-right: 5px;}
     grid-row-end: 3;
 }
 
-.uv_gradient {
+.sliderUV {
+    -webkit-appearance: none;
+    width: 140px;
+    height: 4px;
+    border-radius: 20px;
     background: linear-gradient(90deg, #91E4BC, #9A77E5, #F36060, #FCE411);
-    height: 5px;
-    width: 100%;
+   
 }
 
 .right_block :not(:first-child) div {
@@ -373,7 +378,7 @@ section > div > p{
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
-    height: 45px;
+    height: 10px;
 }
 
 .data7days > p {
@@ -397,5 +402,3 @@ section > div > p{
 .humidity > div > .humidity_value { padding-top: 20px}
 .humidity > div > p {padding-top: 18px;}
 
-.pressure > div > .pressure_value { padding-top: 20px}
-.pressure > div > p {padding-top: 18px;}
