@@ -1,4 +1,4 @@
-const apiKey = 'd50fea6da78846e2adb160603231206';
+const apiKey = '3abdff9144844fafb79224400232406';
 const apiUrl = 'http://api.weatherapi.com/v1/current.json';
 const apiUrlAstro = 'http://api.weatherapi.com/v1/astronomy.json';
 const api7Days = 'https://api.weatherapi.com/v1/forecast.json';
