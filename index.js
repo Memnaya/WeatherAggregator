@@ -4,6 +4,11 @@ const apiUrlAstro = 'http://api.weatherapi.com/v1/astronomy.json';
 const api7Days = 'https://api.weatherapi.com/v1/forecast.json';
 const searchBox = document.querySelector(' .js_input');
 
+document.getElementById('block4').style.display = 'none';
+document.getElementById('block1').style.display = 'none';
+document.getElementById('block2').style.display = 'none';
+document.getElementById('block3').style.display = 'none';
+
 async function checkWeather(city = 'Saint-Petersburg') {
   const responseCurrent = await fetch(`${apiUrl}?key=${apiKey}&q=${city}`);
   const data = await responseCurrent.json();
@@ -39,49 +44,6 @@ async function checkWeather(city = 'Saint-Petersburg') {
   }
   document.querySelector('.weather_name').innerHTML = data.current.condition.text;
   weatherCondition.src = data.current.condition.icon;
-  // console.log(data.current.condition.text);
-  // switch (data.current.condition.text) {
-  //   case 'Partly cloudy' || 'Overcast' ||:
-  //     weatherCondition.src = 'img/today/partly_cloudy.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Немного облачно';
-  //     break;
-  //   case 'Cloudy':
-  //     weatherCondition.src = 'img/today/cloudy.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Облачно';
-  //     break;
-  //   case 'Sunny':
-  //     weatherCondition.src = 'img/today/clear_sunny.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Солнечно';
-  //     break;
-  //   case 'Overcast':
-  //     weatherCondition.src = 'img/today/cloudy.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Пасмурно';
-  //     break;
-  //   case 'Mist':
-  //     weatherCondition.src = 'img/today/cloudy.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Туман';
-  //     break;
-  //   case 'Patchy rain possible':
-  //     weatherCondition.src = 'img/today/pour.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Местами возможен дождь';
-  //     break;
-  //   case 'Patchy rain possible':
-  //     weatherCondition.src = 'img/today/pour.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Местами возможен дождь';
-  //     break;
-  //   case 'Patchy rain possible':
-  //     weatherCondition.src = 'img/today/pour.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Местами возможен дождь';
-  //     break;
-  //   case 'Patchy rain possible':
-  //     weatherCondition.src = 'img/today/pour.svg';
-  //     document.querySelector('.weather_name').innerHTML = 'Местами возможен дождь';
-  //     break;
-  //   default:
-  //     console.log();
-  //     break;
-  // }
-
   let { sunset } = dataAstro.astronomy.astro;
   let { sunrise } = dataAstro.astronomy.astro;
   sunset = sunset.slice(0, sunset.length - 3);
@@ -97,8 +59,19 @@ function handle(e) {
     checkWeather(searchBox.value);
   }
 }
-// checkWeather();
-
-// searchBtn.addEventListener('click', () => {
-//   checkWeather(searchBox.value);
-// });
+// eslint-disable-next-line no-unused-vars
+document.getElementById('btn10Days').onclick = function () {
+  if (document.getElementById('block1').style.display === 'none') {
+    document.getElementById('btn10Days').style.background = 'url(\'/img/arrow_up.svg\')';
+    document.getElementById('block4').style.display = 'flex';
+    document.getElementById('block1').style.display = 'flex';
+    document.getElementById('block2').style.display = 'flex';
+    document.getElementById('block3').style.display = 'flex';
+  } else {
+    document.getElementById('btn10Days').style.background = 'url(\'/img/arrow_down.svg\')';
+    document.getElementById('block4').style.display = 'none';
+    document.getElementById('block1').style.display = 'none';
+    document.getElementById('block2').style.display = 'none';
+    document.getElementById('block3').style.display = 'none';
+  }
+};
