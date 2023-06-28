@@ -311,6 +311,21 @@ main {
 
 .data7days :first-child{margin: 0}
 
+.data7days > img {
+    width: 25px;
+    height: 25px;
+}
+
+.imgDay2, .imgDay3, .imgDay4, .imgDay5, .imgDay6, .imgDay7 {
+    margin-left: 33px !important;
+}
+
+.w {
+    display: inline-block !important;
+    flex-basis: 100px;
+    margin-left: 20px;
+}
+
 .days10Btn {
     position: relative;
     bottom: -10%;
