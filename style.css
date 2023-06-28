@@ -283,12 +283,11 @@ main {
     border-radius: 15px;
 }
 
-.q {
-    display: none !important;
-}
+
 
 .forecast7days {
     display: block;
+    height: min-content;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -311,6 +310,20 @@ main {
 }
 
 .data7days :first-child{margin: 0}
+
+.days10Btn {
+    position: relative;
+    bottom: -10%;
+    left: 50%;
+    width: 23px;
+    height: 8px;
+    background-color: unset;
+    background-image: url('/img/arrow_down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+}
 
 .slider7days {
     -webkit-appearance: none;
