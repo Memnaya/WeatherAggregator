@@ -5,7 +5,7 @@ const apiKey = '3abdff9144844fafb79224400232406';
 const apiUrl = 'http://api.weatherapi.com/v1/current.json';
 const apiUrlAstro = 'http://api.weatherapi.com/v1/astronomy.json';
 const api7Days = 'https://api.weatherapi.com/v1/forecast.json';
-const searchBox = document.querySelector(' .js_input');
+const searchBox = document.getElementById('js_input');
 
 document.getElementById('block4').style.display = 'none';
 document.getElementById('block1').style.display = 'none';
@@ -92,10 +92,6 @@ async function checkWeather(city = 'Saint-Petersburg') {
     console.log(temp);
     document.querySelector(`.${tagProgressBar[i]}`).style.width = `${temp}%`;
   }
-  // for (let i = 0; i <= 6; i += 1) {
-  //   dayData.push(forecast[i + 1].date.slice(5));
-  //   document.querySelector(`${tagDay[i]}`).innerHTML = dayData[i];
-  // }
 
   const data24 = (data) => {
     const currentDay = data.forecast.forecastday['0'].hour;
@@ -138,10 +134,14 @@ async function checkWeather(city = 'Saint-Petersburg') {
     let index = htmlStart;
 
     for (let i = 0; i <= 23; i += 1) {
+
+      console.log(`ИНЖЕКС И СЧЁТЧИК ВРЕМЕНИ  ${index}`);
+
       if (index > 23) {
         index = 0;
+        console.log(`ВРЕМЯ ОТНИМАЕТСЯ ЗДЕЕЕЕЕЕЕЕСТЬ${index}`);
       }
-      
+
       const dayImg = htmlStart > 23 ? `${secondDayTemp[index][0]}` : `${firstDayTemp[index][0]}`;
       const dayTemp = htmlStart > 23 ? `${secondDayTemp[index][1]}°` : `${firstDayTemp[index][1]}°`;
       console.log(dayTemp);
@@ -155,16 +155,20 @@ async function checkWeather(city = 'Saint-Petersburg') {
   };
 
   data24(data7days);
+
+  for (let i = 0; i <= 6; i += 1) {
+    dayData.push(forecast[i + 1].date.slice(5));
+    document.querySelector(`${tagDay[i]}`).innerHTML = dayData[i];
+  }
 }
 checkWeather('Saint-Petersburg');
 
-// eslint-disable-next-line no-unused-vars
-function handle(e) {
-  if (e.keyCode === 13) {
+searchBox.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
     checkWeather(searchBox.value);
   }
-}
-// eslint-disable-next-line no-unused-vars
+});
+
 document.getElementById('btn10Days').onclick = function () {
   if (document.getElementById('block1').style.display === 'none') {
     document.getElementById('btn10Days').style.background = 'url(\'/img/arrow_up.svg\')';
