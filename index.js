@@ -17,7 +17,7 @@ async function checkWeather(city = 'Saint-Petersburg') {
   const data = await responseCurrent.json();
   const responseAstro = await fetch(`${apiUrlAstro}?key=${apiKey}&q=${city}`);
   const dataAstro = await responseAstro.json();
-  const response7Days = await fetch(`${api7Days}?key=${apiKey}&q=${city}&days=7`);
+  const response7Days = await fetch(`${api7Days}?key=${apiKey}&q=${city}&days=8`);
   const data7days = await response7Days.json();
   const weatherCondition = document.querySelector('.weather_cond_main');
   console.log(data);
@@ -55,9 +55,38 @@ async function checkWeather(city = 'Saint-Petersburg') {
   document.querySelector('.rainfall_value').innerHTML = `${data.current.precip_mm}мм`;
   document.querySelector('.sunset_time').innerHTML = sunset;
   document.querySelector('.sunrise_time').innerHTML = ` ${sunrise}`;
-}
+  // 7 days
+  const forecast = data7days.forecast.forecastday;
+  const dayIcon = [];
+  const dayData = [];
+  const dayMinTemp = [];
+  const dayMaxTemp = [];
+  const tagImgdays = ['.imgDay1', '.imgDay2', '.imgDay3', '.imgDay4', '.imgDay5', '.imgDay6', '.imgDay7'];
+  const tagDay = ['.day2', '.day3', '.day4', '.day5', '.day6', '.day7'];
+  const tagMinTemp = ['.min_temp1', '.min_temp2', '.min_temp3', '.min_temp4', '.min_temp5', '.min_temp6', '.min_temp7'];
+  const tagMaxTemp = ['.max_temp1', '.max_temp2', '.max_temp3', '.max_temp4', '.max_temp5', '.max_temp6', '.max_temp7'];
+  for (let i = 0; i <= 6; i += 1) {
+    dayIcon.push(forecast[i].day.condition.icon);
+    dayMinTemp.push(Math.round(forecast[i].day.mintemp_c));
+    dayMaxTemp.push(Math.round(forecast[i].day.maxtemp_c));
+    document.querySelector(`${tagImgdays[i]}`).src = dayIcon[i];
+    document.querySelector(`${tagMinTemp[i]}`).innerHTML = dayMinTemp[i];
+    document.querySelector(`${tagMaxTemp[i]}`).innerHTML = dayMaxTemp[i];
+    const averageTemp = (dayMaxTemp[0] + dayMaxTemp[0]) / 2;
+    // eslint-disable-next-line prefer-destructuring
 
-checkWeather();
+    document.getElementById('1').max = dayMaxTemp[0];
+    document.getElementById('1').value = averageTemp;
+    // console.log(dayMinTemp[i]);
+  }
+  // eslint-disable-next-line no-restricted-syntax
+  for (let i = 0; i <= 6; i += 1) {
+    dayData.push(forecast[i + 1].date.slice(5));
+    document.querySelector(`${tagDay[i]}`).innerHTML = dayData[i];
+  }
+}
+checkWeather('Saint-Petersburg');
+
 // eslint-disable-next-line no-unused-vars
 function handle(e) {
   if (e.keyCode === 13) {
