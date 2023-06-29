@@ -5,7 +5,7 @@
   "description": "study practice",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "team 'Baldej'",
   "license": "ISC",
