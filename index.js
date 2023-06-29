@@ -84,8 +84,22 @@ async function checkWeather(city = 'Saint-Petersburg') {
     dayData.push(forecast[i + 1].date.slice(5));
     document.querySelector(`${tagDay[i]}`).innerHTML = dayData[i];
   }
+
+const currentDay = data7days.forecast.forecastday["0"].hour;
+const nextDay = data7days.forecast.forecastday["1"].hour;
+
+const firstDayTemp = _.reduce(currentDay, ([], hour) => hour.temp_c);
+const secondDayTemp = _.reduce(nextDay, ([], hour) => hour.temp_c);
+
+console.log(firstDayTemp);
+console.log(secondDayTemp);
 }
 checkWeather('Saint-Petersburg');
+
+
+
+
+
 
 // eslint-disable-next-line no-unused-vars
 function handle(e) {
