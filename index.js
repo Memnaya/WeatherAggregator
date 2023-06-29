@@ -1,3 +1,6 @@
+// import get24HoursTemp from "./src/get24HoursTemp";
+import _ from "lodash";
+
 const apiKey = '3abdff9144844fafb79224400232406';
 const apiUrl = 'http://api.weatherapi.com/v1/current.json';
 const apiUrlAstro = 'http://api.weatherapi.com/v1/astronomy.json';
@@ -20,6 +23,7 @@ async function checkWeather(city = 'Saint-Petersburg') {
   console.log(data);
   console.log(dataAstro);
   console.log(data7days);
+  
   document.querySelector('.current_temp').innerHTML = `${Math.round(data.current.temp_c)}°C`;
   document.querySelector('.pressure_value').innerHTML = `${data.current.pressure_mb}`;
   document.querySelector('.feels_like_value').innerHTML = `${Math.round(data.current.feelslike_c)}°C`;
@@ -53,6 +57,7 @@ async function checkWeather(city = 'Saint-Petersburg') {
   document.querySelector('.sunrise_time').innerHTML = ` ${sunrise}`;
 }
 
+checkWeather();
 // eslint-disable-next-line no-unused-vars
 function handle(e) {
   if (e.keyCode === 13) {
