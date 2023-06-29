@@ -1,4 +1,3 @@
-
 import fs from 'fs';
 import process from 'process';
 import path from 'path';
@@ -8,13 +7,13 @@ const getFullPath = (filepath) => path.resolve(process.cwd(), filepath);
 const getData = (filepath) => JSON.parse(fs.readFileSync(getFullPath(filepath), 'utf8'));
 const forecast = getData('../forecast.json');
 
-// export default 
+// export default
 const data24 = (data) => {
   const currentDay = data.forecast.forecastday['0'].hour;
   const nextDay = data.forecast.forecastday['1'].hour;
   const currentAstro = data.forecast.forecastday['0'].astro;
   const nextAstro = data.forecast.forecastday['1'].astro;
- const result = [];
+  const result = [];
 
   for (const item of currentDay) {
     const imgPath = item.condition.icon;
@@ -23,18 +22,16 @@ const data24 = (data) => {
     imgAndTemp.push(Math.round(item.temp_c));
     result.push(imgAndTemp);
   }
-   return result;
+  return result;
 
-
-//   const getdayTemp = (data) => _.reduce(data, (acc, hour) => {
-//     const imgPath = hour.condition.icon;
-//     const imgAndTemp = [];
-//     imgAndTemp.push(imgPath.slice(2));
-//     imgAndTemp.push(Math.round(hour.temp_c));
-//     acc.push(imgAndTemp);
-//     return acc;
-//   }, []);
-
+  //   const getdayTemp = (data) => _.reduce(data, (acc, hour) => {
+  //     const imgPath = hour.condition.icon;
+  //     const imgAndTemp = [];
+  //     imgAndTemp.push(imgPath.slice(2));
+  //     imgAndTemp.push(Math.round(hour.temp_c));
+  //     acc.push(imgAndTemp);
+  //     return acc;
+  //   }, []);
 };
 
 console.log(data24(forecast));
@@ -58,7 +55,6 @@ console.log(data24(forecast));
 
 //   let time = currentHour;
 
-
 // for (let i = 0; i <= 23; i += 1) {
 //     let curTime = time;
 
@@ -67,7 +63,7 @@ console.log(data24(forecast));
 //     }
 //     const dayImg = time > 24 ? `${secondDayTemp[curTime][0]}` : `${firstDayTemp[curTime][0]}`;
 //     const dayTemp = time > 24 ? `${secondDayTemp[curTime][1]}` : `${firstDayTemp[curTime][1]}°`;
-    
+
 //     document.querySelectorAll(`.time${i}`).innerHTML = `${curTime}`;
 //     document.querySelectorAll(`.hour_cond${i}`).src = `${dayImg}`;
 //     document.querySelectorAll(`.hour_temp${i}`).innerHTML = `${dayTemp}°`;
@@ -84,7 +80,7 @@ console.log(data24(forecast));
 // //           document.querySelectorAll(`.hour_temp${i}`).innerHTML = 'Восход';
 // //           time += 1;
 // //           i += 1;
-        
+
 // //       }
 // //       if (sunset === currentHour && i < 24) {
 // //         document.querySelectorAll(`.time${i}`).innerHTML = `${sunset}`;

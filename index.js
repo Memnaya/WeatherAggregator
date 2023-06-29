@@ -5,7 +5,7 @@ const apiKey = '3abdff9144844fafb79224400232406';
 const apiUrl = 'http://api.weatherapi.com/v1/current.json';
 const apiUrlAstro = 'http://api.weatherapi.com/v1/astronomy.json';
 const api7Days = 'https://api.weatherapi.com/v1/forecast.json';
-const searchBox = document.querySelector(' .js_input');
+const searchBox = document.getElementById('js_input');
 
 document.getElementById('block4').style.display = 'none';
 document.getElementById('block1').style.display = 'none';
@@ -88,89 +88,79 @@ async function checkWeather(city = 'Saint-Petersburg') {
     console.log(temp);
     document.querySelector(`.${tagProgressBar[i]}`).style.width = `${temp}%`;
   }
-  // for (let i = 0; i <= 6; i += 1) {
-  //   dayData.push(forecast[i + 1].date.slice(5));
-  //   document.querySelector(`${tagDay[i]}`).innerHTML = dayData[i];
-  // }
+  const data24 = (data) => {
+    const currentDay = data.forecast.forecastday['0'].hour;
+    const nextDay = data.forecast.forecastday['1'].hour;
+    const currentAstro = data.forecast.forecastday['0'].astro;
+    const nextAstro = data.forecast.forecastday['1'].astro;
 
+    const getdayTemp = (data) => {
+      const result = [];
 
+      for (const item of data) {
+        const imgPath = item.condition.icon;
+        const imgAndTemp = [];
+        imgAndTemp.push(imgPath);
+        imgAndTemp.push(Math.round(item.temp_c));
+        result.push(imgAndTemp);
+      }
+      return result;
+    };
 
-const data24 = (data) => {
-  const currentDay = data.forecast.forecastday['0'].hour;
-  const nextDay = data.forecast.forecastday['1'].hour;
-  const currentAstro = data.forecast.forecastday['0'].astro;
-  const nextAstro = data.forecast.forecastday['1'].astro;
+    const firstDayTemp = getdayTemp(currentDay);
+    const secondDayTemp = getdayTemp(nextDay);
+    const currentHour = new Date().getHours();
 
-  const getdayTemp = (data) =>  {
-    const result = [];
+    const formatAstro = (data, sunPosition) => {
+      const time = data[`${sunPosition.toLowerCase()}`];
+      const hour = parseInt(time.slice(0, 2));
+      const timeFormat = time.slice(-2);
 
-  for (const item of data) {
-    const imgPath = item.condition.icon;
-    const imgAndTemp = [];
-    imgAndTemp.push(imgPath);
-    imgAndTemp.push(Math.round(item.temp_c));
-    result.push(imgAndTemp);
-  }
-   return result;
-  }
+      if (hour === 12 && timeFormat === 'AM') return 0;
+      if (hour < 12 && timeFormat === 'AM') return hour;
+      if (hour === 12 && timeFormat === 'PM') return hour;
+      return 12 + hour;
+    };
 
-  const firstDayTemp = getdayTemp(currentDay);
-  const secondDayTemp = getdayTemp(nextDay);
-  const currentHour = new Date().getHours();
+    const sunrise = formatAstro(currentAstro, 'sunrise');
+    const sunset = formatAstro(currentAstro, 'sunset');
 
+    let htmlStart = currentHour;
+    let index = htmlStart;
 
+    for (let i = 0; i <= 23; i += 1) {
+      console.log(`ИНЖЕКС И СЧЁТЧИК ВРЕМЕНИ  ${index}`);
 
-  const formatAstro = (data, sunPosition) => {
-    const time = data[`${sunPosition.toLowerCase()}`];
-    const hour = parseInt(time.slice(0, 2));
-    const timeFormat = time.slice(-2);
-
-    if (hour === 12 && timeFormat === 'AM') return 0;
-    if (hour < 12 && timeFormat === 'AM') return hour;
-    if (hour === 12 && timeFormat === 'PM') return hour;
-    return 12 + hour;
-  };
-
-  const sunrise = formatAstro(currentAstro, 'sunrise');
-  const sunset = formatAstro(currentAstro, 'sunset');
-
-  let htmlStart = currentHour;
-  let index = htmlStart;
-
-for (let i = 0; i <= 23; i += 1) {
-
-    console.log(`ИНЖЕКС И СЧЁТЧИК ВРЕМЕНИ  ${index}`);
-
-    if (index > 23) {
+      if (index > 23) {
         index = 0;
         console.log(`ВРЕМЯ ОТНИМАЕТСЯ ЗДЕЕЕЕЕЕЕЕСТЬ${index}`);
+      }
+      const dayImg = htmlStart > 23 ? `${secondDayTemp[index][0]}` : `${firstDayTemp[index][0]}`;
+      const dayTemp = htmlStart > 23 ? `${secondDayTemp[index][1]}°` : `${firstDayTemp[index][1]}°`;
+      console.log(dayTemp);
+      index += 1;
+
+      document.querySelector(`.time${i}`).innerHTML = `${index - 1}`;
+      document.querySelector(`.hour_cond${i}`).src = `${dayImg}`;
+      document.querySelector(`.hour_temp${i}`).innerHTML = `${dayTemp}`;
+      htmlStart += 1;
     }
-    const dayImg = htmlStart > 23 ? `${secondDayTemp[index][0]}` : `${firstDayTemp[index][0]}`;
-    const dayTemp = htmlStart > 23 ? `${secondDayTemp[index][1]}°` : `${firstDayTemp[index][1]}°`;
-    console.log(dayTemp);
-    index += 1;
-    
-    document.querySelector(`.time${i}`).innerHTML = `${index-1}`;
-    document.querySelector(`.hour_cond${i}`).src = `${dayImg}`;
-    document.querySelector(`.hour_temp${i}`).innerHTML = `${dayTemp}`;
-    htmlStart += 1;
+  };
 
-
-}
-
-};
-
-data24(data7days);
+  data24(data7days);
+  for (let i = 0; i <= 6; i += 1) {
+    dayData.push(forecast[i + 1].date.slice(5));
+    document.querySelector(`${tagDay[i]}`).innerHTML = dayData[i];
+  }
 }
 checkWeather('Saint-Petersburg');
 
-// eslint-disable-next-line no-unused-vars
-function handle(e) {
-  if (e.keyCode === 13) {
+searchBox.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
     checkWeather(searchBox.value);
   }
-}
-// eslint-disable-next-line no-unused-vars
+});
+
 document.getElementById('btn10Days').onclick = function () {
   if (document.getElementById('block1').style.display === 'none') {
     document.getElementById('btn10Days').style.background = 'url(\'/img/arrow_up.svg\')';
