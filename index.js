@@ -28,6 +28,7 @@ async function checkWeather(city = 'Saint-Petersburg') {
   document.querySelector('.feels_like_value').innerHTML = `${Math.round(data.current.feelslike_c)}°C`;
   document.querySelector('.humidity_value').innerHTML = `${data.current.humidity}%`;
   document.querySelector('.indexUV1').innerHTML = `${data.current.uv}`;
+  document.querySelector('.sliderUV').setAttribute('value', data.current.uv);
   switch (data.current.uv) {
     case 1 || 2:
       document.querySelector('.value_UV').innerHTML = 'Низкий';

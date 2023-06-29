@@ -391,7 +391,7 @@ section header img {margin-right: 5px;}
     height: 4px;
     border-radius: 20px;
     background: linear-gradient(90deg, #91E4BC, #9A77E5, #F36060, #FCE411);
-   
+    pointer-events: none;
 }
 
 .right_block :not(:first-child) div {
