@@ -47,7 +47,11 @@ async function checkWeather(city = 'Saint-Petersburg') {
       console.log();
       break;
   }
-  document.querySelector('.weather_name').innerHTML = data.current.condition.text;
+  const textCondition = data.current.condition.text;
+  // if (textCondition.toLowerCase().includes('sunny')) return "Солнечно";
+  // if (textCondition.toLowerCase().includes('mist')) return "Туман";
+  // if (textCondition.toLowerCase().includes('cloudy')) return "Облачно";
+  document.querySelector('.weather_name').innerHTML = textCondition;
   weatherCondition.src = data.current.condition.icon;
   let { sunset } = dataAstro.astronomy.astro;
   let { sunrise } = dataAstro.astronomy.astro;
@@ -88,6 +92,7 @@ async function checkWeather(city = 'Saint-Petersburg') {
     console.log(temp);
     document.querySelector(`.${tagProgressBar[i]}`).style.width = `${temp}%`;
   }
+
   const data24 = (data) => {
     const currentDay = data.forecast.forecastday['0'].hour;
     const nextDay = data.forecast.forecastday['1'].hour;
@@ -129,12 +134,14 @@ async function checkWeather(city = 'Saint-Petersburg') {
     let index = htmlStart;
 
     for (let i = 0; i <= 23; i += 1) {
+
       console.log(`ИНЖЕКС И СЧЁТЧИК ВРЕМЕНИ  ${index}`);
 
       if (index > 23) {
         index = 0;
         console.log(`ВРЕМЯ ОТНИМАЕТСЯ ЗДЕЕЕЕЕЕЕЕСТЬ${index}`);
       }
+
       const dayImg = htmlStart > 23 ? `${secondDayTemp[index][0]}` : `${firstDayTemp[index][0]}`;
       const dayTemp = htmlStart > 23 ? `${secondDayTemp[index][1]}°` : `${firstDayTemp[index][1]}°`;
       console.log(dayTemp);
@@ -148,6 +155,7 @@ async function checkWeather(city = 'Saint-Petersburg') {
   };
 
   data24(data7days);
+
   for (let i = 0; i <= 6; i += 1) {
     dayData.push(forecast[i + 1].date.slice(5));
     document.querySelector(`${tagDay[i]}`).innerHTML = dayData[i];
