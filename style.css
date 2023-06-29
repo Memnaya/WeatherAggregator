@@ -326,6 +326,20 @@ main {
     margin-left: 20px;
 }
 
+.progressContainer {
+    flex-basis: 100%;
+    background-color: rgba(255, 255, 255, 0.26);
+    border-radius: 4px;
+}
+
+.progressTemp {
+    height: 6px;
+    width: 0;
+    background: linear-gradient( 45deg,rgba(145, 228, 188, 1), rgba(252, 228, 17, 1));
+    border-radius: 4px;
+    margin: 0 !important;
+}
+
 .days10Btn {
     position: relative;
     bottom: -10%;
@@ -467,7 +481,6 @@ section > div > p{
     color: #FFFFFF;
 }
 
-.sunset .sunset_time {padding-top: 25px}
 .sunset .sunrise_info {padding-top: 18px}
 .rainfall > div > .last24hours {
     font-weight: 400;
@@ -477,13 +490,13 @@ section > div > p{
     color: #FFFFFF;
 }
 
-.humidity > div > .humidity_value { padding-top: 20px}
+.humidity > div > .humidity_value { padding-top: 12px}
 .humidity > div > p {padding-top: 10px;}
 
 
 
 
-.pressure > div > .pressure_value { padding-top: 20px}
+.pressure > div > .pressure_value { padding-top: 12px}
 
 .pressure > div > p {padding-top: 18px;}
 
@@ -512,5 +525,4 @@ section > div > p{
     
 }
 
-.pressure > div > .pressure_value { padding-top: 20px}
 .pressure > div > p {padding-top: 18px;}

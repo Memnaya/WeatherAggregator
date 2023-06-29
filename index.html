@@ -159,55 +159,69 @@
                 <section class="forecast7days">
                     <header>
                         <img src="/img/calendar.svg" alt="Календарь">
-                        <p>Погода на 10 дней</p>
+                        <p>Погода на 7 дней</p>
                     </header>
                     <div class="data7days">
                         <p class="day1">Сегодня</p>
                         <img class="imgDay1" src="/img/cloud.svg" alt="Картинка">
                         <p class="min_temp1">10</p>
-                        <input type="range" id="1" min="0" class="slider7days" max="57" value="0">
+                        <div class="progressContainer">
+                            <div class="weatherBar1 progressTemp"></div>
+                        </div>
                         <p class="max_temp1">20</p>
                     </div>
                     <div class="data7days">
                         <p class="day2 w">Сегодня</p>
                         <img class="imgDay2" src="/img/cloud.svg" alt="Картинка">
                         <p class="min_temp2">10</p>
-                        <input type="range" id="" min="68" class="slider7days" max="57" value="0">
+                        <div class="progressContainer">
+                            <div class="weatherBar2 progressTemp"></div>
+                        </div>
                         <p class="max_temp2">20</p>
                     </div>
                     <div class="data7days">
                         <p class="day3 w">Сегодня</p>
                         <img class="imgDay3" src="/img/cloud.svg" alt="Картинка">
                         <p class="min_temp3">10</p>
-                        <input type="range" id="" min="68" class="slider7days" max="57" value="0">
+                        <div class="progressContainer">
+                            <div class="weatherBar3 progressTemp"></div>
+                        </div>
                         <p class="max_temp3">20</p>
                     </div>
                     <div id="block1" class="data7days">
                         <p class="day4 w">Сегодня</p>
                         <img class="imgDay4" src="/img/cloud.svg" alt="Картинка">
                         <p class="min_temp4">10</p>
-                        <input type="range" id="" min="68" class="slider7days" max="57" value="0">
+                        <div class="progressContainer">
+                            <div class="weatherBar4 progressTemp"></div>
+                        </div>
                         <p class="max_temp4">20</p>
                     </div>
                     <div id="block2" class="data7days">
                         <p class="day5 w">Сегодня</p>
                         <img class="imgDay5" src="/img/cloud.svg" alt="Картинка">
                         <p class="min_temp5">10</p>
-                        <input type="range" id="" min="68" class="slider7days" max="57" value="0">
+                        <div class="progressContainer">
+                            <div class="weatherBar5 progressTemp"></div>
+                        </div>
                         <p class="max_temp5">20</p>
                     </div>
                     <div id="block3" class="data7days">
                         <p class="day6 w">Сегодня</p>
                         <img class="imgDay6" src="/img/cloud.svg" alt="Картинка">
                         <p class="min_temp6">10</p>
-                        <input type="range" id="" min="68" class="slider7days" max="57" value="0">
+                        <div class="progressContainer">
+                            <div class="weatherBar6 progressTemp"></div>
+                        </div>
                         <p class="max_temp6">20</p>
                     </div>
                     <div id="block4" class="data7days">
                         <p class="day7 w">Сегодня</p>
                         <img class="imgDay7" src="/img/cloud.svg" alt="Картинка">
                         <p class="min_temp7">10</p>
-                        <input type="range" id="" min="68" class="slider7days" max="57" value="0">
+                        <div class="progressContainer">
+                            <div  class="weatherBar7 progressTemp"></div>
+                        </div>
                         <p class="max_temp7">20</p>
                     </div>
                     <button id="btn10Days" class="days10Btn" value="Click" onclick="displayBlock()"></button>
@@ -243,7 +257,6 @@
                     <div>
                         <h4 class=" little_blocks rainfall_value">мм</h4>
                         <p class="last24hours">за последние 24ч</p>
-                        <p><span class="rainfall_value"></span>мм ожидается в течении суток</p>
                     </div>
                  </section>
                  <section class="feels_like little_blocks">
@@ -253,7 +266,6 @@
                     </header>
                     <div>
                         <h4 class="feels_like_value">20</h4>
-                        <p>По ощущениям прохладнее из-за ветра</p>
                     </div>
                  </section>
                  <section class="humidity little_blocks">
@@ -263,7 +275,6 @@
                     </header>
                     <div>
                         <h4 class="humidity_value">55%</h4>
-                        <p>Точка росы сейчас <span class="dewPoint">1</span></p>
                     </div>
                  </section>
                  <section class="pressure little_blocks">

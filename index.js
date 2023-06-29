@@ -65,6 +65,17 @@ async function checkWeather(city = 'Saint-Petersburg') {
   const tagDay = ['.day2', '.day3', '.day4', '.day5', '.day6', '.day7'];
   const tagMinTemp = ['.min_temp1', '.min_temp2', '.min_temp3', '.min_temp4', '.min_temp5', '.min_temp6', '.min_temp7'];
   const tagMaxTemp = ['.max_temp1', '.max_temp2', '.max_temp3', '.max_temp4', '.max_temp5', '.max_temp6', '.max_temp7'];
+  const tagProgressBar = ['weatherBar1', 'weatherBar2', 'weatherBar3', 'weatherBar4', 'weatherBar5', 'weatherBar6', 'weatherBar7'];
+  // eslint-disable-next-line no-restricted-syntax
+  // for (const day of forecast) {
+  //   let hour24Arr = [];
+  //   // eslint-disable-next-line no-restricted-syntax
+  //   for (const hour of day.hour) {
+  //     hour24Arr.push(Math.round(hour.temp_c));
+  //   }
+  //   progressValue.push(hour24Arr);
+  //   hour24Arr = [0];
+  // }
   for (let i = 0; i <= 6; i += 1) {
     dayIcon.push(forecast[i].day.condition.icon);
     dayMinTemp.push(Math.round(forecast[i].day.mintemp_c));
@@ -72,14 +83,10 @@ async function checkWeather(city = 'Saint-Petersburg') {
     document.querySelector(`${tagImgdays[i]}`).src = dayIcon[i];
     document.querySelector(`${tagMinTemp[i]}`).innerHTML = dayMinTemp[i];
     document.querySelector(`${tagMaxTemp[i]}`).innerHTML = dayMaxTemp[i];
-    const averageTemp = (dayMaxTemp[0] + dayMaxTemp[0]) / 2;
-    // eslint-disable-next-line prefer-destructuring
-
-    document.getElementById('1').max = dayMaxTemp[0];
-    document.getElementById('1').value = averageTemp;
-    // console.log(dayMinTemp[i]);
+    const temp = (dayMinTemp[i] / dayMaxTemp[i]) * 100;
+    console.log(temp);
+    document.querySelector(`.${tagProgressBar[i]}`).style.width = `${temp}%`;
   }
-  // eslint-disable-next-line no-restricted-syntax
   for (let i = 0; i <= 6; i += 1) {
     dayData.push(forecast[i + 1].date.slice(5));
     document.querySelector(`${tagDay[i]}`).innerHTML = dayData[i];
