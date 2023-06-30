@@ -170,9 +170,12 @@ main {
     font-weight: 700;
     font-size: 40px;
     line-height: 48px;
-    width: 425px;
+    width: 500px;
     color: #FFF;
 }
+
+
+#js_input::-webkit-search-cancel-button {display: none;}
 
 .weather_name {
     display: inline-block;

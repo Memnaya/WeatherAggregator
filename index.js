@@ -47,11 +47,17 @@ async function checkWeather(city = 'Saint-Petersburg') {
       console.log();
       break;
   }
-  const textCondition = data.current.condition.text;
-  // if (textCondition.toLowerCase().includes('sunny')) return "Солнечно";
-  // if (textCondition.toLowerCase().includes('mist')) return "Туман";
-  // if (textCondition.toLowerCase().includes('cloudy')) return "Облачно";
-  document.querySelector('.weather_name').innerHTML = textCondition;
+
+  const translateCond = () => {
+    const textCondition = data.current.condition.text;
+    if (textCondition.toLowerCase().includes('sunny')) return 'Солнечно';
+    if (textCondition.toLowerCase().includes('mist')) return 'Туманно';
+    if (textCondition.toLowerCase().includes('cloudy')) return 'Облачно';
+    if (textCondition.toLowerCase().includes('heavy rain with thunder')) return 'Cильный дождь с грозой';
+    return 'Cильный дождь с грозой';
+  };
+
+  document.querySelector('.weather_name').innerHTML = `${translateCond()}`;
   weatherCondition.src = data.current.condition.icon;
   let { sunset } = dataAstro.astronomy.astro;
   let { sunrise } = dataAstro.astronomy.astro;
@@ -93,16 +99,16 @@ async function checkWeather(city = 'Saint-Petersburg') {
     document.querySelector(`.${tagProgressBar[i]}`).style.width = `${temp}%`;
   }
 
-  const data24 = (data) => {
-    const currentDay = data.forecast.forecastday['0'].hour;
-    const nextDay = data.forecast.forecastday['1'].hour;
-    const currentAstro = data.forecast.forecastday['0'].astro;
-    const nextAstro = data.forecast.forecastday['1'].astro;
+  const getData24 = (data24) => {
+    const currentDay = data24.forecast.forecastday['0'].hour;
+    const nextDay = data24.forecast.forecastday['1'].hour;
+    // const currentAstro = data.forecast.forecastday['0'].astro;
+    // const nextAstro = data.forecast.forecastday['1'].astro;
 
-    const getdayTemp = (data) => {
+    const getdayTemp = (dataTemp) => {
       const result = [];
 
-      for (const item of data) {
+      for (const item of dataTemp) {
         const imgPath = item.condition.icon;
         const imgAndTemp = [];
         imgAndTemp.push(imgPath);
@@ -116,37 +122,31 @@ async function checkWeather(city = 'Saint-Petersburg') {
     const secondDayTemp = getdayTemp(nextDay);
     const currentHour = new Date().getHours();
 
-    const formatAstro = (data, sunPosition) => {
-      const time = data[`${sunPosition.toLowerCase()}`];
-      const hour = parseInt(time.slice(0, 2));
-      const timeFormat = time.slice(-2);
+    // const formatAstro = (data, sunPosition) => {
+    //   const time = data[`${sunPosition.toLowerCase()}`];
+    //   const hour = parseInt(time.slice(0, 2));
+    //   const timeFormat = time.slice(-2);
 
-      if (hour === 12 && timeFormat === 'AM') return 0;
-      if (hour < 12 && timeFormat === 'AM') return hour;
-      if (hour === 12 && timeFormat === 'PM') return hour;
-      return 12 + hour;
-    };
+    //   if (hour === 12 && timeFormat === 'AM') return 0;
+    //   if (hour < 12 && timeFormat === 'AM') return hour;
+    //   if (hour === 12 && timeFormat === 'PM') return hour;
+    //   return 12 + hour;
+    // };
 
-    const sunrise = formatAstro(currentAstro, 'sunrise');
-    const sunset = formatAstro(currentAstro, 'sunset');
+    // const sunrise = formatAstro(currentAstro, 'sunrise');
+    // const sunset = formatAstro(currentAstro, 'sunset');
 
     let htmlStart = currentHour;
     let index = htmlStart;
 
     for (let i = 0; i <= 23; i += 1) {
-
-      console.log(`ИНЖЕКС И СЧЁТЧИК ВРЕМЕНИ  ${index}`);
-
       if (index > 23) {
         index = 0;
-        console.log(`ВРЕМЯ ОТНИМАЕТСЯ ЗДЕЕЕЕЕЕЕЕСТЬ${index}`);
       }
-
       const dayImg = htmlStart > 23 ? `${secondDayTemp[index][0]}` : `${firstDayTemp[index][0]}`;
       const dayTemp = htmlStart > 23 ? `${secondDayTemp[index][1]}°` : `${firstDayTemp[index][1]}°`;
       console.log(dayTemp);
       index += 1;
-
       document.querySelector(`.time${i}`).innerHTML = `${index - 1}`;
       document.querySelector(`.hour_cond${i}`).src = `${dayImg}`;
       document.querySelector(`.hour_temp${i}`).innerHTML = `${dayTemp}`;
@@ -154,7 +154,7 @@ async function checkWeather(city = 'Saint-Petersburg') {
     }
   };
 
-  data24(data7days);
+  getData24(data7days);
 
   for (let i = 0; i <= 6; i += 1) {
     dayData.push(forecast[i + 1].date.slice(5));
@@ -169,7 +169,7 @@ searchBox.addEventListener('keypress', (event) => {
   }
 });
 
-document.getElementById('btn10Days').onclick = function () {
+document.getElementById('btn10Days').onclick = () => {
   if (document.getElementById('block1').style.display === 'none') {
     document.getElementById('btn10Days').style.background = 'url(\'/img/arrow_up.svg\')';
     document.getElementById('block4').style.display = 'flex';
